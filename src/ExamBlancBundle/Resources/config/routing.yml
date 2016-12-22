@@ -1,0 +1,11 @@
+exam_blanc_homepage:
+    path:     /
+    defaults: { _controller: ExamBlancBundle:Default:index }
+
+exam_blanc_algo:
+    path: /algo
+    defaults: { _controller: ExamBlancBundle:Default:algo }
+
+exam_blanc_sf2:
+    path: sf2
+    defaults: { _controller: ExamBlancBundle:Default:sf2 }

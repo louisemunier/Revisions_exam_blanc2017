@@ -1,0 +1,39 @@
+{% extends '@ExamBlanc/default/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="container sf2">
+        <div class="row ennonce">
+            <h1>Symfony / MVC / Intégration</h1>
+            <h3>Ennoncé</h3>
+            <p>En tant qu’organisateur de voyage, tu souhaites connaître la disponibilité de chambres dans un large choix d’hôtels.</p>
+            <p>En t’aidant du fichier SQL joint, contenant une liste d'hôtels, leur capacité d’accueil et leur taux de remplissage actuel par chambres, tu vas devoir:</p>
+            <ul>
+                <li>Créer une interface web afin de saisir simplement le nombre de chambres que tu souhaiterais réserver</li>
+                <li>Afficher en retour la liste des hôtels pouvant accueillir ce nombre de personnes</li>
+            </ul>
+            <p>Le tout avec un minimum de mise en forme</p>
+            <p>Bonus: une recherche avancée (par nombre d’étoiles, par ville…)</p>
+            <h5>Help</h5>
+            <ul>
+                <li>Le fichier SQL se trouve à la racine du projet dans le dossier BDD.</li>
+                <li><a href="https://www.liquidweb.com/kb/create-a-mysql-database-on-linux-via-command-line/" target="_blank">Create DATABASE</a></li>
+                <li><a href="http://stackoverflow.com/questions/17666249/how-to-import-an-sql-file-using-the-command-line-in-mysql" target="_blank">Import DATABASE</a></li>
+            </ul>
+        </div>
+        <div class="instruction row">
+            <p>Crée un nouveau bundle nommé "TravelBundle"</p>
+            <p>Tu es libre d'utiliser le/les frameworks css/js de ton choix, aucune librairie n'est chargé</p>
+            <p>Tu peux également utiliser le fichier base.html.twig si tu en a besoin, tout le reste doit se trouver dans ton bundle</p>
+            <p>L'interface que tu va créer devra être consultable par via le path "/travel"</p>
+            <p>Pour la suite je te laisse faire</p>
+            <p>Bon courage</p>
+        </div>
+        <div class="row">
+            <div class="col m12 button_homepage">
+                <a href="{{ path('exam_blanc_homepage') }}" class="waves-effect waves-light btn">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
