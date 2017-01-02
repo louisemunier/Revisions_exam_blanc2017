@@ -14,11 +14,13 @@ class AlgoController extends Controller
     public function number_of_char($str)
     {
 
+
     }
 
     // Exercice 2
     public function panier($tab)
     {
+
 
     }
 }

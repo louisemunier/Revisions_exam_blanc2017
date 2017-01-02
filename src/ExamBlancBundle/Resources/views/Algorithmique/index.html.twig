@@ -6,23 +6,23 @@
         <div class="row>">
             <h1>Algorithmique</h1>
             <p>Bienvenu sur le test d'algorithmique</p>
-            <p>Ci dessous deux sujets d'algo, du plus facile au plus difficile.</p>
+            <p>Ci-dessous deux sujets d'algo, du plus facile au plus difficile.</p>
             <p>Ouvre le projet avec PHP Storm et rend toi dans le controlleur "AlgoController", c'est ici que tu devras travailler.</p>
             <p>Tu n'as normalement rien à modifier dans les autres fichiers pour cette étape</p>
-            <p>Si ton algo est bon, le bouton passe au vert.</p>
+            <p>Si ton algo est bon, les tests passent au vert.</p>
             <p>Bon courage</p>
         </div>
 
         <div class="row">
             <div class="row exo">
                 <div class="row ennoncé">
-                    <h3>Exercide 1</h3>
+                    <h3>Exercice 1</h3>
                     <p>Créer une fonction qui trie les lettres par fréquence d'utilisation (seules les lettres de a-z sont à prendre en compte)</p>
                     <p>On ne prend en compte que les lettres présentes dans la phrase.</p>
                     <p>Les majuscules et minuscules ne sont pas différenciées.</p>
                     <p>Les lettres accentuées sont à ignorer</p>
                     <p><strong>En entrée,</strong> une chaine de caractères (la phrase à analyser)</p>
-                    <p><strong>En sortie,</strong> un tableau des résultats, triés par lettres, les plus utilisées en haut.</p>
+                    <p><strong>En sortie,</strong> un tableau des résultats, triés par lettres, les plus utilisées en premier.</p>
                 </div>
                 <div class="row exemples line_divider">
                     <div class="col m6">
@@ -94,13 +94,13 @@
                     <ul>
                         <li>Le total TTC</li>
                         <li>Le total HT (avec remise)</li>
-                        <li>Le total de remise: calculé sur le total HT)</li>
+                        <li>Le total de remise: calculé sur le total HT</li>
                         <li>Le total TVA à 5% (code tva 1): calculé sur le total après remise</li>
                         <li>Le total TVA à 20% (code tva 2): calculé sur le total après remise</li>
                     </ul>
                     <p>Si un même article est commandé au moins 3 fois, on applique 5% de remise sur le total HT de la ligne</p>
                     <p>Si un même article est commandé au moins 10 fois, on applique 10% de remise sur le total HT de la ligne</p>
-                    <p>Les resultats devront être affiché en monétaire (deux chiffrs après la virgule), cependant un différenciel de </p>
+                    <p>Les resultats devront être affichés en monétaire (deux chiffres après la virgule). L'arrondi se fera le plus tard possible afin de garder une précision maximale. </p>
                     <p><strong>En entrée,</strong> un tableau contenant les produits.</p>
                     <p><strong>En sortie,</strong> un tableau des résultats.</p>
                 </div>
@@ -142,10 +142,10 @@
                             <p><strong>Sortie: </strong></p>
                             <p>
                                 Array(<br>
-                                <span class="marge">[total_ht] => 269.74<br></span>
-                                <span class="marge">[total_discount] => 14.53<br></span>
+                                <span class="marge">[total_ht] => 269.73<br></span>
+                                <span class="marge">[total_discount] => 14.52<br></span>
                                 <span class="marge">[total_tva5] => 0.98<br></span>
-                                <span class="marge">[total_tva20] => 50.04<br></span>
+                                <span class="marge">[total_tva20] => 50.03<br></span>
                                 <span class="marge">[total_ttc] => 320.74<br></span>
                                 )
                             </p>
@@ -192,7 +192,7 @@
                                 <span class="marge">[total_discount] => 10.14<br></span>
                                 <span class="marge">[total_tva5] => 1.04<br></span>
                                 <span class="marge">[total_tva20] => 139.27<br></span>
-                                <span class="marge">[total_ttc] => 857.38<br></span>
+                                <span class="marge">[total_ttc] => 857.37<br></span>
                                 )
                             </p>
                         </div>

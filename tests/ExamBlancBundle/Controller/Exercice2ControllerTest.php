@@ -47,10 +47,10 @@ class Exercice1ControllerTest extends WebTestCase
             ),
         );
         $result = Array(
-            'total_ht' => 269.74,
-            'total_discount' => 14.53,
+            'total_ht' => 269.73,
+            'total_discount' => 14.52,
             'total_tva5' => 0.98,
-            'total_tva20' => 50.04,
+            'total_tva20' => 50.03,
             'total_ttc' => 320.74,
         );
         $this->assertEquals($this->controller->panier($panier), $result);
@@ -89,7 +89,7 @@ class Exercice1ControllerTest extends WebTestCase
             'total_discount' => 10.14,
             'total_tva5' => 1.04,
             'total_tva20' => 139.27,
-            'total_ttc' => 857.38,
+            'total_ttc' => 857.37,
         );
 
         $this->assertEquals($this->controller->panier($panier), $result);
