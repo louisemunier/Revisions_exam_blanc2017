@@ -1,3 +1,8 @@
+travel:
+    resource: "@TravelBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 exam_final:
     resource: "@ExamBlancBundle/Resources/config/routing.yml"
     prefix:   /
