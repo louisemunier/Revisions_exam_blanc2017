@@ -1,1 +1,80 @@
-Hello World!
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <div class="container">
+            <div class="row">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <div class="col s12 input-field">
+                    {{ form_row(form.nbRoom) }}
+                </div>
+                <div class="col s6 input-field">
+                    {{ form_row(form.city) }}
+                </div>
+                {#<div class="col s6 input-field">#}
+                    {#<select>#}
+                        {#<option value="" class="disabled selected">Combien d'étoiles?</option>#}
+                        {#<option value="1">1 étoile</option>#}
+                        {#<option value="2">2 étoiles</option>#}
+                        {#<option value="3">3 étoiles</option>#}
+                        {#<option value="4">4 étoiles</option>#}
+                        {#<option value="5">5 étoiles</option>#}
+                        {#{{ form_row(form.stars) }}#}
+                    {#</select>#}
+                {#</div>#}
+                <div class="col s6 input-field">
+                    {#<select class="browser-default">#}
+                        {{ form_row(form.stars, {'attr': {'class': ''}}) }}
+                    {#</select>#}
+                </div>
+                {#{{ form_row(form.save, {'attr': {'class': 'waves-effect waves-light btn'}}) }}#}
+                <div class="row">
+                    <input class=" waves-effect waves-light btn" type="submit" value="Search"/>
+                </div>
+                {{ form_end(form) }}
+                {#{{ render(controller('TravelBundle:Default:listeHotels')) }}#}
+            </div>
+            <div class="row">
+                <table class="col s10 offset-s1 highlight">
+                    <thead>
+                    <tr>
+                        <th data-field="id">n°</th>
+                        {#<th data-field="idRoom">n° chambre</th>#}
+                        {#<th data-field="capacity">Capacité</th>#}
+                        <th data-field="price">hotelName</th>
+                        <th data-field="price">city</th>
+                        <th data-field="price">stars</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for key,result in hotels %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            {#<td>{{ result.roomNumber }}</td>#}
+                            {#<td>{{ result.0.capacity }}</td>#}
+                            <td>{{ result.0.name }}</td>
+                            <td>{{ result.0.city }}</td>
+                            <td>
+                                {% for i in 1 .. result.0.stars %}
+                                    <i class="material-icons">star</i>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% else %}
+                        Il n'y a pas d'hotel correspondant à vos critères.
+                    {% endfor %}
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block javascripts %}
+        <script>
+            $(document).ready(function() {
+                $('select').material_select();
+            });
+        </script>
+    {% endblock %}
+

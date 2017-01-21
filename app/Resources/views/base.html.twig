@@ -3,11 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-            {% block stylesheets %}{% endblock %}
+            {% block stylesheets %}
+                <!--Import Google Icon Font-->
+                <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <!--Import materialize.css-->
+                <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"  media="screen,projection"/>
+
+                <!--Import jQuery before materialize.js-->
+                <script type="text/javascript" src="{{ asset('https://code.jquery.com/jquery-2.1.1.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+            {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}  {% endblock %}
     </body>
 </html>

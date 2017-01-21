@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th data-field="id">n°</th>
+                <th data-field="name">n° chambre</th>
+                <th data-field="price">Capacité</th>
+                <th data-field="price">Nom Hôtel</th>
+                <th data-field="price">Ville</th>
+                <th data-field="price">Nombre d'étoiles</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for room in rooms %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ room.roomNumber }}</td>
+                <td>{{ room.capacity }}</td>
+                <td>{{ room.hotel.name }}</td>
+                <td>{{ room.hotel.city }}</td>
+                <td>
+                    {% for i in 1 .. room.hotel.stars %}
+                        <i class="material-icons">star</i>
+                    {% endfor %}
+                    {#{{ room.hotel.stars }}#}
+                </td>
+            </tr>
+        {% else %}
+            Il n'y a pas d'hotel répondant à vos critères.
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
