@@ -16,18 +16,18 @@ class HotelRepository extends \Doctrine\ORM\EntityRepository
     public function findByHotelAttributs($nbRoom, $city = '', $stars = 1)
     {
         return $this->createQueryBuilder('h')
-            ->select('h, COUNT(r.hotel) as nbroom')
-            ->join('h.rooms', 'r')
-            ->groupBy('r.hotel, h.id')
-            ->having('nbroom>=:nbroom')
-            ->setParameter('nbroom', $nbRoom)
-            ->where('r.book = :book')
-            ->setParameter('book', 0)
-            ->andWhere('h.stars >= :stars')
-            ->setParameter('stars', $stars)
-            ->andWhere('h.city=:city')
-            ->setParameter('city', $city)
-            ->orderBy('nbroom', 'DESC')
+            ->select('h, COUNT(r.hotel) as nbroom') // Dans la table Hotel, compte le nombre de chambre par hotel
+            ->join('h.rooms', 'r') // relie le champ room de la table hotel à la table room
+            ->groupBy('r.hotel, h.id') // regroupe les hotels dans la table room par leur id
+            ->having('nbroom>=:nbroom') // la valeur du champ nbroom doit être supérieur ou égal à à la valeur donnée dans le form
+            ->setParameter('nbroom', $nbRoom) // enregistre la donnée dans la variable $nbRoom
+            ->where('r.book = :book') // où le champ book de Room est égal à la variable book du form
+            ->setParameter('book', 0) // book doit être à 0
+            ->andWhere('h.stars >= :stars') // où le champ stars de la table Hotel est égal à la variable stars du form
+            ->setParameter('stars', $stars) // on enregistre la donnée dans $stars
+            ->andWhere('h.city=:city') // et où le champ city dans la table Hotel est égal à la variable city du form
+            ->setParameter('city', $city) // on enregistre la donnée dans $city
+            ->orderBy('nbroom', 'DESC') // tri décroissant des hotels par le nombre de chambres disponibles
             ->getQuery()->getResult();
     }
 }
